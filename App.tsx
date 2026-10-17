@@ -3,6 +3,8 @@ import { useState } from "react";
 import { View, Text, Pressable } from "react-native";
 import Inicio from "./telas/Inicio";
 import Clientes from "./telas/Clientes";
+import ListarVeiculos from "./telas/Listarveiculos";
+import CadastrarVeiculo from "./telas/CadastrarVeiculo";
 
 export default function App() {
   const [tela, setTela] = useState("Inicio");
@@ -21,9 +23,17 @@ export default function App() {
   if (tela === "Inicio") {
     return <Inicio navegar={navegar} />;
   }
-  // Se a tela selecionada for Clientes, mostra o componente Inicio.tsx.
+
   if (tela === "Clientes") {
   return <Clientes navegar={navegar} />;
+}
+
+if (tela === "Veiculos") {
+  return <ListarVeiculos navegar={navegar} />;
+}
+
+if (tela === "CadastrarVeiculo") {
+  return <CadastrarVeiculo navegar={navegar} />;
 }
 
   // Para as demais opções, mostra uma tela provisória.
